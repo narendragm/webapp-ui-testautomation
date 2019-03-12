@@ -2,6 +2,11 @@ package com.test.automation.listneners;
 
 import com.relevantcodes.extentreports.ExtentReports;
 
+/**
+ * @author Narendra Marbate
+ *
+ * Setting up HTML reporting path
+ */
 public class ExtentManager {
     private static ExtentReports extent;
 

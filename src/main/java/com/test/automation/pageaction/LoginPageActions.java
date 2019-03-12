@@ -28,9 +28,9 @@ public class LoginPageActions {
   }
 
   public void setUserNameTxtBox(String username) {
-    if (ObjectRepoWE.userNameTxtBox.isDisplayed()) {
-      Assert.assertEquals("Username", ObjectRepoWE.userNameTxtBox.getAttribute("placeholder"));
-      ObjectRepoWE.userNameTxtBox.sendKeys(username);
+    if (ObjectRepoWE.getUserNameTxtBox().isDisplayed()) {
+      Assert.assertEquals("Username", ObjectRepoWE.getUserNameTxtBox().getAttribute("placeholder"));
+      ObjectRepoWE.getUserNameTxtBox().sendKeys(username);
     } else System.out.println("username Text box is not Available ");
   }
 
@@ -43,16 +43,16 @@ public class LoginPageActions {
   }
 
   public void setPasswordwordTxtBox(String password) {
-    if (ObjectRepoWE.passwordwordTxtBox.isDisplayed()) {
-      Assert.assertEquals("Password", ObjectRepoWE.passwordwordTxtBox.getAttribute("placeholder"));
-      ObjectRepoWE.passwordwordTxtBox.sendKeys(password);
+    if (ObjectRepoWE.getPasswordwordTxtBox().isDisplayed()) {
+      Assert.assertEquals("Password", ObjectRepoWE.getPasswordwordTxtBox().getAttribute("placeholder"));
+      ObjectRepoWE.getPasswordwordTxtBox().sendKeys(password);
     } else System.out.println("username Text box is not Available ");
   }
 
   public void clickLoginButton() {
-    if (ObjectRepoWE.loginButton.isDisplayed() && ObjectRepoWE.loginButton.isEnabled()) ObjectRepoWE.loginButton.click();
+    if (ObjectRepoWE.getLoginButton().isDisplayed() && ObjectRepoWE.getLoginButton().isEnabled()) ObjectRepoWE.getLoginButton().click();
     else System.out.println("Login button not Working");
-    Assert.assertEquals("Swag Labs", ObjectRepoWE.headerTextOnProductPage.getAttribute("innerText"));
+    Assert.assertEquals("Swag Labs", ObjectRepoWE.getHeaderTextOnProductPage().getAttribute("innerText"));
   }
 
   public void getLoginPage() {

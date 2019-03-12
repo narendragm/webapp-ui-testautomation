@@ -8,6 +8,11 @@ import org.openqa.selenium.WebDriver;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 
+/**
+ * @author Narendra Marbate
+ *
+ * This class may be used to retry for failed tests
+ */
 public class Retry implements IRetryAnalyzer {
     private int count = 0;
     private static int maxTry = 1; //Run the failed test 2 times

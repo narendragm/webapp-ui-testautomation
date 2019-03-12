@@ -3,7 +3,7 @@ package com.test.automation.testbase;
 import org.openqa.selenium.WebDriver;
 
 /** @author Narendra Marbate
- *
+ * Managing driver actions
  */
 public abstract class DriverManager {
 

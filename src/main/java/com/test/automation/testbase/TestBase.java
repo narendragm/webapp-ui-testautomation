@@ -10,26 +10,23 @@ import com.test.automation.testutils.TestConfig;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.Reporter;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
+import org.testng.annotations.*;
 
 import java.lang.reflect.Method;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
-
-/** @author NarendraMarbate */
+/**
+ * @author Narendra Marbate
+ *
+ * Forms the base for test.
+ * All initiations, Before, After methods, etc ate defined here
+ */
 
 @Listeners(TestListener.class )
 public class TestBase {
 
   public static final ResourceBundle TEST_PROPERTIES =
       ReadTestProperties.readResource(TestConfig.TEST_CONFIG_PROPERTIES_FILE.getValue());
-
-  public static final ResourceBundle OR =
-          ReadTestProperties.readResource(TEST_PROPERTIES.getString(TestConfig.OR_REPO_PATH.getValue()));
 
   public static final String TEST_SITE_URL = TEST_PROPERTIES.getString("Test_Site_URL");
 
@@ -70,6 +67,11 @@ public class TestBase {
     System.out.println(" afterMethod() ");
     //ReusableFunctions.captureScreenShot(driver,result.getMethod().getMethodName());
     driverManager.quitDriver();
+  }
+
+  @AfterSuite
+  public void afterSuite(){
+    driverManager.stopService();
   }
 
     public WebDriver getDriver() {

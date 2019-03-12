@@ -11,8 +11,7 @@ import java.io.IOException;
 public class ReusableFunctions {
 
   /**
-   * Just call this method to get screenshot when ever you want
-   *
+   * Call this function to Captures screenshot wherever needed
    * @param ldriver
    */
   public static void captureScreenShot(WebDriver ldriver, String PageName) {

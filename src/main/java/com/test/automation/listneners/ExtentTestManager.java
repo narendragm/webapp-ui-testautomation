@@ -6,6 +6,11 @@ import com.relevantcodes.extentreports.ExtentTest;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author Narendra Marbate
+ *
+ * Works with Listner for each test to generate report
+ */
 public class ExtentTestManager {
     static Map extentTestMap = new HashMap();
     static ExtentReports extent = ExtentManager.getReporter();

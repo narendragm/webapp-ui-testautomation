@@ -1,5 +1,10 @@
 package com.test.automation.testutils;
 
+/**
+ * @author Narendra Marbate
+ *
+ * Enum to provide property fields
+ */
 public enum TestConfig {
   OR_REPO_PATH("OR_Properties_File_Path"),
   CHROME_DRIVER_LOCATION("Chrome_Driver_Path"),

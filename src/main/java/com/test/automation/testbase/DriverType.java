@@ -1,6 +1,10 @@
 package com.test.automation.testbase;
 
-/** @author NarendraMarbate */
+/**
+ * @author Narendra Marbate
+ *
+ * Driver type emun
+ */
 public enum DriverType {
   CHROME("chrome"),
   FIREFOX("firefox"),

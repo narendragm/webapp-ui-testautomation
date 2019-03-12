@@ -7,57 +7,111 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class ObjectRepoWE { 
 
-    /* WebElement Object Repo Login Page  */
-    @FindBy(id = "user-name")
-    @CacheLookup
-    public static  WebElement userNameTxtBox;
+/**
+ * @author Narendra Marbate
+ *
+ * Acts as WebElement Repository and elements are retrieved by Getter methods
+ */
+public class ObjectRepoWE {
 
-    @FindBy(id = "password")
-    @CacheLookup
-    public static  WebElement passwordwordTxtBox;
+  /* WebElement Object Repo Login Page  */
+  @FindBy(id = "user-name")
+  @CacheLookup
+  private static WebElement userNameTxtBox;
 
-    @FindBy(xpath = "//*[@id=\"login_button_container\"]/div/form/input[3]")
-    @CacheLookup
-    public static  WebElement loginButton;
+  @FindBy(id = "password")
+  @CacheLookup
+  private static WebElement passwordwordTxtBox;
 
-    @FindBy(xpath = "//*[@id=\"header_container\"]/div[1]")
-    @CacheLookup
-    public static  WebElement headerTextOnProductPage;
+  @FindBy(xpath = "//*[@id=\"login_button_container\"]/div/form/input[3]")
+  @CacheLookup
+  private static WebElement loginButton;
 
-    /* WebElement Object Repo Product Page  */
+  @FindBy(xpath = "//*[@id=\"header_container\"]/div[1]")
+  @CacheLookup
+  private static WebElement headerTextOnProductPage;
 
-    @FindBy(xpath = " //*[@id=\"item_2_title_link\"]/div")
-    @CacheLookup
-    public static  WebElement onesieDescriptionId;
+  /* WebElement Object Repo Product Page  */
 
-    @FindBy(xpath = " //*[@id=\"item_0_title_link\"]/div")
-    @CacheLookup
-    public static  WebElement bikeLightDescriptionId;
+  @FindBy(xpath = " //*[@id=\"item_2_title_link\"]/div")
+  @CacheLookup
+  private static WebElement onesieDescriptionId;
 
-    @FindBy(xpath = "//*[@id=\"inventory_container\"]/div/div[5]/div[3]/button")
-    @CacheLookup
-    public static  WebElement onesieAddToCartButton;
+  @FindBy(xpath = " //*[@id=\"item_0_title_link\"]/div")
+  @CacheLookup
+  private static WebElement bikeLightDescriptionId;
 
-    @FindBy(xpath = "//*[@id='item_0_title_link']/following::button[@class='add-to-cart-button']")
-    @CacheLookup
-    public static  WebElement bikeLightAddToCartButton;
+  @FindBy(xpath = "//*[@id=\"inventory_container\"]/div/div[5]/div[3]/button")
+  @CacheLookup
+  private static WebElement onesieAddToCartButton;
 
-    @FindBy(xpath = " //*[@id=\"shopping_cart_container\"]")
-    @CacheLookup
-    public static  WebElement shoppingCartId;
+  @FindBy(xpath = "//*[@id='item_0_title_link']/following::button[@class='add-to-cart-button']")
+  @CacheLookup
+  private static WebElement bikeLightAddToCartButton;
 
-    @FindBy(xpath = "//*['@id=shopping_cart_container']/a/span")
-    @CacheLookup
-    public static  WebElement shoppingCartBadgeId;
+  @FindBy(xpath = " //*[@id=\"shopping_cart_container\"]")
+  @CacheLookup
+  private static WebElement shoppingCartId;
 
-    /* WebElement Object Repo Cart Page  */
-    @FindBy(xpath = "//*[@id=\"contents_wrapper\"]/div[2]/text()")
-    @CacheLookup
-    public static WebElement cartPageSubtitle;
+  @FindBy(xpath = "//*['@id=shopping_cart_container']/a/span")
+  @CacheLookup
+  private static WebElement shoppingCartBadgeId;
 
-    @FindAll(@FindBy(xpath = ".//*[@class='inventory_item_name']"))
-    @CacheLookup
-    public static List<WebElement> elementName;
+  /* WebElement Object Repo Cart Page  */
+  @FindBy(xpath = "//*[@id=\"contents_wrapper\"]/div[2]/text()")
+  @CacheLookup
+  private static WebElement cartPageSubtitle;
+
+  @FindAll(@FindBy(xpath = ".//*[@class='inventory_item_name']"))
+  @CacheLookup
+  private static List<WebElement> elementName;
+
+  public static WebElement getUserNameTxtBox() {
+    return userNameTxtBox;
+  }
+
+  public static WebElement getPasswordwordTxtBox() {
+    return passwordwordTxtBox;
+  }
+
+  public static WebElement getLoginButton() {
+    return loginButton;
+  }
+
+  public static WebElement getHeaderTextOnProductPage() {
+    return headerTextOnProductPage;
+  }
+
+  public static WebElement getOnesieDescriptionId() {
+    return onesieDescriptionId;
+  }
+
+  public static WebElement getBikeLightDescriptionId() {
+    return bikeLightDescriptionId;
+  }
+
+  public static WebElement getOnesieAddToCartButton() {
+    return onesieAddToCartButton;
+  }
+
+  public static WebElement getBikeLightAddToCartButton() {
+    return bikeLightAddToCartButton;
+  }
+
+  public static WebElement getShoppingCartId() {
+    return shoppingCartId;
+  }
+
+  public static WebElement getShoppingCartBadgeId() {
+    return shoppingCartBadgeId;
+  }
+
+  public static WebElement getCartPageSubtitle() {
+    return cartPageSubtitle;
+  }
+
+  public static List<WebElement> getElementName() {
+    return elementName;
+  }
 }

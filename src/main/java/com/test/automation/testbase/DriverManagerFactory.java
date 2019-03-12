@@ -1,6 +1,11 @@
 package com.test.automation.testbase;
 
-/** @author NarendraMarbate */
+/**
+ * @author Narendra Marbate
+ *
+ * Get the tyoe of Driver needed
+ * Test in this projects are built only for Chrome driver
+ */
 public class DriverManagerFactory {
 
   public static DriverManager getManager(DriverType type) {

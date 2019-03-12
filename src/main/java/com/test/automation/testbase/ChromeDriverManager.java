@@ -9,6 +9,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.File;
 
 /** @author Narendra Marbate
+ * Initializing Chrome Driver by doing lookup at right Driver location
  */
 public class ChromeDriverManager extends DriverManager {
 

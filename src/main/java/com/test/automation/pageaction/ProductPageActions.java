@@ -22,19 +22,19 @@ public class ProductPageActions {
   public ProductPageActions(WebDriver webDriver){ this.wedriver = webDriver; }
 
   public void checkOnesieProductAvailable() {
-    isProductAvailable(ObjectRepoWE.onesieDescriptionId, "Sauce Labs Onesie");
+    isProductAvailable(ObjectRepoWE.getOnesieDescriptionId(), "Sauce Labs Onesie");
   }
 
   public void addOnesieToCart() {
-    addProductToCart(ObjectRepoWE.onesieAddToCartButton);
+    addProductToCart(ObjectRepoWE.getOnesieAddToCartButton());
   }
 
   public void checkBikeLightProductAvailable() {
-    isProductAvailable(ObjectRepoWE.bikeLightDescriptionId, "Sauce Labs Bike Light");
+    isProductAvailable(ObjectRepoWE.getBikeLightDescriptionId(), "Sauce Labs Bike Light");
   }
 
   public void addBikeLightToCart() {
-    addProductToCart(ObjectRepoWE.bikeLightAddToCartButton);
+    addProductToCart(ObjectRepoWE.getBikeLightAddToCartButton());
   }
 
   public void isProductAvailable(WebElement webElement, String productName) {
@@ -51,14 +51,14 @@ public class ProductPageActions {
   }
 
   public void checkAndClickShoppingCart() {
-    if (ObjectRepoWE.shoppingCartId.isDisplayed() && ObjectRepoWE.shoppingCartId.isEnabled()) {
-      ObjectRepoWE.shoppingCartId.click();
+    if (ObjectRepoWE.getShoppingCartId().isDisplayed() && ObjectRepoWE.getShoppingCartId().isEnabled()) {
+      ObjectRepoWE.getShoppingCartId().click();
     } else System.out.println("Not able to click shopping cart");
   }
 
   public void validateShoppingCartBadge() {
-    if (ObjectRepoWE.shoppingCartBadgeId.isDisplayed()
-        && ObjectRepoWE.shoppingCartBadgeId.isEnabled()) {
+    if (ObjectRepoWE.getShoppingCartBadgeId().isDisplayed()
+        && ObjectRepoWE.getShoppingCartBadgeId().isEnabled()) {
       System.out.println("shopping Cart Badge is available");
     } else System.out.println("shopping Cart Badge is not available");
   }

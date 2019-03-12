@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 public class CartPageActions {
   public boolean verifyItemsInCart(String cartItem) {
     boolean iteamAvailableinCart = false;
-    for (WebElement ele : ObjectRepoWE.elementName) {
+    for (WebElement ele : ObjectRepoWE.getElementName()) {
       if (cartItem.equals(ele.getText())) {
         iteamAvailableinCart = true;
         break;
