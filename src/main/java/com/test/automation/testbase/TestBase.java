@@ -1,5 +1,7 @@
 package com.test.automation.testbase;
 
+import com.test.automation.listneners.ExtentTestManager;
+import com.test.automation.listneners.TestListener;
 import com.test.automation.pageaction.LoginPageActions;
 import com.test.automation.pageaction.ProductPageActions;
 import com.test.automation.testutils.ReadTestProperties;
@@ -12,12 +14,15 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 
 import java.lang.reflect.Method;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 /** @author NarendraMarbate */
+
+@Listeners(TestListener.class )
 public class TestBase {
 
   public static final ResourceBundle TEST_PROPERTIES =
@@ -42,7 +47,7 @@ public class TestBase {
     Reporter.log("DriverManager Initialized....", true);
     loginPageActions = new LoginPageActions(driverManager.getDriver());
     productPageActions = new ProductPageActions(driverManager.getDriver());
-  }
+    }
 
   @BeforeMethod
   public void beforeMethod() {
@@ -70,4 +75,26 @@ public class TestBase {
     public WebDriver getDriver() {
         return driver;
     }
+
+  public static void pushTestReportingNotification(String testObjectiveMessage){
+    ExtentTestManager.getTest().setDescription(testObjectiveMessage);
+  }
+
+  public static String getDriverPath(String driverName){
+    switch (driverName) {
+      case "CHROME":
+        driverName =
+            System.getProperty("user.dir")
+                + TestBase.TEST_PROPERTIES.getString(TestConfig.CHROME_DRIVER_LOCATION.getValue());
+        driverName +=
+            System.getProperty("os.name").toLowerCase().contains("windows")
+                ? "chromedriver.exe"
+                : "chromedriver";
+        return driverName;
+
+      default:
+        Reporter.log("No driver available for expected driver name", true);
+        return null;
+    }
+  }
 }

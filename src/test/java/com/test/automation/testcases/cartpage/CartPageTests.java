@@ -18,11 +18,11 @@ public class CartPageTests extends TestBase {
    * - Validate all expected WebElements are present on Cart page
    * - Validate product added to the Cart are present in the Cart
    */
-  @Test(dependsOnMethods = "com.test.automation.testcases.productpage.ProductPageTests.addItemsOnProductPageToCart")
+  @Test(dependsOnMethods = {"com.test.automation.testcases.loginpage.LoginPageTests.loginWithValidCredentials",
+          "com.test.automation.testcases.productpage.ProductPageTests.addItemsOnProductPageToCart"})
   public void validateItemsInCart() throws Exception {
     /* Set Test Message for test */
-    ExtentTestManager.getTest()
-        .setDescription(
+    pushTestReportingNotification(
             "Test Name - Get Cart Page, validate expected Webelement exist and validate product added to the are correct one");
     /* Initiate Login page action */
     CartPageActions cartPage = PageFactory.initElements(driver, CartPageActions.class);

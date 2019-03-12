@@ -22,12 +22,10 @@ public class ChromeDriverManager extends DriverManager {
         chromeDriverService =
             new ChromeDriverService.Builder()
                 .usingDriverExecutable(
-                    new File(
-                            workingDir+TestBase.TEST_PROPERTIES.getString(TestConfig.CHROME_DRIVER_LOCATION.getValue())))
+                    new File( TestBase.getDriverPath(DriverType.CHROME.toString())))
                 .usingAnyFreePort()
                 .build();
         chromeDriverService.start();
-        //System.setProperty("webdriver.chrome.driver",TestBase.TEST_PROPERTIES.getString(TestConfig.CHROME_DRIVER_LOCATION.getValue()));
       } catch (Exception e) {
         e.printStackTrace();
       }
@@ -36,14 +34,16 @@ public class ChromeDriverManager extends DriverManager {
 
   @Override
   public void stopService() {
-    if (null != chromeDriverService && chromeDriverService.isRunning()) chromeDriverService.stop();
+    if (null != chromeDriverService && chromeDriverService.isRunning()) {
+      chromeDriverService.stop();
+    }
   }
 
   @Override
   public void createDriver() {
     DesiredCapabilities capabilities = DesiredCapabilities.chrome();
     ChromeOptions options = new ChromeOptions();
-    options.addArguments("test-type");
+    options.addArguments("test-type", "allow-outdated-plugins");
     capabilities.setCapability(ChromeOptions.CAPABILITY, options);
     driver = new ChromeDriver(chromeDriverService, options);
   }

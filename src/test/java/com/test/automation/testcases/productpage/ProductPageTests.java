@@ -21,8 +21,7 @@ public class ProductPageTests extends TestBase {
   @Test(dependsOnMethods = "com.test.automation.testcases.loginpage.LoginPageTests.loginWithValidCredentials")
   public void addItemsOnProductPageToCart() throws Exception {
     /* Set Test Message for test */
-    ExtentTestManager.getTest()
-        .setDescription(
+    pushTestReportingNotification(
             "Test Name - Get Product Page, validate expected Webelement exist and perform add expected products to cart");
 
     /* Initiate Product page action */

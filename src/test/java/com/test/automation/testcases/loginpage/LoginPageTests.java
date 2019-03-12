@@ -5,6 +5,7 @@ import com.test.automation.testbase.ObjectRepoWE;
 import com.test.automation.testbase.TestBase;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -28,8 +29,7 @@ public class LoginPageTests extends TestBase {
   public void loginWithValidCredentials(@Optional String username, @Optional String password)
       throws Exception {
     /* Set Test Message for test */
-    ExtentTestManager.getTest()
-        .setDescription(
+    pushTestReportingNotification(
             "Test Name - Get Login Page, validate expected Webelement exist and perform login");
 
     /* Initiate Login page action */
