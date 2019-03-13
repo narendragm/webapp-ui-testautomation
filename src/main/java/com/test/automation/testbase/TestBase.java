@@ -40,7 +40,7 @@ public class TestBase {
 
   @BeforeTest
   public void beforeTest() {
-    driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
+    driverManager = DriverManagerFactory.getManager(DriverType.FIREFOX);
     Reporter.log("DriverManager Initialized....", true);
     loginPageActions = new LoginPageActions(driverManager.getDriver());
     productPageActions = new ProductPageActions(driverManager.getDriver());
@@ -98,7 +98,10 @@ public class TestBase {
         driverName =
                 System.getProperty("user.dir")
                         + TestBase.TEST_PROPERTIES.getString(TestConfig.CHROME_DRIVER_LOCATION.getValue());
-        driverName+= "geckodriver.exe";
+        driverName +=
+                System.getProperty("os.name").toLowerCase().contains("windows")
+                        ? "geckodriver.exe"
+                        : "geckodriver";
         return driverName;
       default:
         Reporter.log("No driver available for expected driver name", true);
