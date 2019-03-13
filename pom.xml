@@ -17,7 +17,7 @@
                 <configuration>
                     <!-- Include TestNG Suite file to be executed during Execution -->
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/TestNG.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
