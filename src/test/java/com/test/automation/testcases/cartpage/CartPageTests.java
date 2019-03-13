@@ -1,10 +1,9 @@
 package com.test.automation.testcases.cartpage;
 
-import com.test.automation.listneners.ExtentTestManager;
 import com.test.automation.pageaction.CartPageActions;
 import com.test.automation.testbase.TestBase;
-import org.junit.Assert;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /**

@@ -37,6 +37,7 @@ public class ChromeDriverManager extends DriverManager {
   public void stopService() {
     if (null != chromeDriverService && chromeDriverService.isRunning()) {
       chromeDriverService.stop();
+      chromeDriverService = null;
     }
   }
 

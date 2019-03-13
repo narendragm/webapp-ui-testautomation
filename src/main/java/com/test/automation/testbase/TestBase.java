@@ -66,7 +66,7 @@ public class TestBase {
   public void afterTest() {
     System.out.println(" afterMethod() ");
     //ReusableFunctions.captureScreenShot(driver,result.getMethod().getMethodName());
-    driverManager.quitDriver();
+    //driverManager.quitDriver();
   }
 
   @AfterSuite
@@ -94,6 +94,12 @@ public class TestBase {
                 : "chromedriver";
         return driverName;
 
+      case "firefox":
+        driverName =
+                System.getProperty("user.dir")
+                        + TestBase.TEST_PROPERTIES.getString(TestConfig.CHROME_DRIVER_LOCATION.getValue());
+        driverName+= "geckodriver.exe";
+        return driverName;
       default:
         Reporter.log("No driver available for expected driver name", true);
         return null;
