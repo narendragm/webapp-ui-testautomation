@@ -32,7 +32,7 @@ About tests and test artifacts:
 3) All the tests performs Page Specific Actions, Page specific WebElement verification, Page specific assertions
 4) wherever possible for all tests and support file comments are added to provide more clarity on purpose, what the test, utils, etc.. are doing
 5) Test report generated for the test run at -
-.. \Webapp-UI-TestAutomation\src\test\resources\testreports\ExtentReportResults.html (Please check this beutiful report)
+.. \Webapp-UI-TestAutomation\src\test\resources\testreports\ExtentReportResults.html (Please check this beautiful report)
 
 Instructions to run the project:
 1) Open the cloned project in IDE like IntelliJ/Eclipse IDE (I am using IntelliJ)
