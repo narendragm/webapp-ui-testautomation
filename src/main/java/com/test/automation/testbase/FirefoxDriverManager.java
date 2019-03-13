@@ -2,12 +2,16 @@ package com.test.automation.testbase;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.io.File;
+
 public class FirefoxDriverManager extends DriverManager {
 
   @Override
   public void startService() {
+    File file = new File(TestBase.getDriverPath(DriverType.FIREFOX.getValue()));
+    file.setExecutable(true);
     System.setProperty(
-        "webdriver.gecko.driver", TestBase.getDriverPath(DriverType.FIREFOX.getValue()));
+        "webdriver.gecko.driver", file.toString());
   }
 
   @Override

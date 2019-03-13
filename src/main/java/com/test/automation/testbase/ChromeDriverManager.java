@@ -17,13 +17,13 @@ public class ChromeDriverManager extends DriverManager {
 
   @Override
   public void startService() {
-    String workingDir = System.getProperty("user.dir");
+    File file = new File( TestBase.getDriverPath(DriverType.CHROME.toString()));
+    file.setExecutable(true);
     if (null == chromeDriverService) {
       try {
         chromeDriverService =
             new ChromeDriverService.Builder()
-                .usingDriverExecutable(
-                    new File( TestBase.getDriverPath(DriverType.CHROME.toString())))
+                .usingDriverExecutable(file)
                 .usingAnyFreePort()
                 .build();
         chromeDriverService.start();
